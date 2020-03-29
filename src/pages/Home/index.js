@@ -7,8 +7,8 @@ import styles from "./style"
 
 import { MovieIcon } from "../../icons"
 
-export default () => {
-
+export default (props) => {
+	console.log(props)
 	//inciamos el hook use state para usar estados dentro de componentes funcionales
 	//using object decontrustion we separate searchtext (the value of the state, in this case an empty string) and setSearchText (callback funcion used to set the new value of the state)
 	const [searchText, setSearchText] = useState("")
@@ -20,10 +20,10 @@ export default () => {
 	}
 
 	const handleCleanTextClick = e => {
-		console.log("10")
+		setSearchText("")
 	}
 	const handleSearchTextClick = e => {
-		console.log("10")
+		props.history.push(`/results?movieName=${searchText}`)
 	}
 	return (
 		<Container className={classes.container}>

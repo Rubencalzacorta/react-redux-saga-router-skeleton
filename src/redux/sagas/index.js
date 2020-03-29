@@ -4,6 +4,6 @@ import search from "./search"
 
 export default function* rootSaga() {
 	yield all([
-		search
+		search()
 	]);
 }
